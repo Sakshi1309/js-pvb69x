@@ -61,3 +61,38 @@ console.log(departmentList);
 var mapArr = employees.map((item) => {
   return { name: item.name, salary: item.salary };
 });
+
+const arr = [
+  { id: 1, name: 'test1' },
+  { id: 2, name: 'test2' },
+  { id: 2, name: 'test3' },
+  { id: 3, name: 'test4' },
+  { id: 4, name: 'test5' },
+  { id: 5, name: 'test6' },
+  { id: 5, name: 'test7' },
+  { id: 6, name: 'test8' },
+];
+
+const arr1 = [];
+const filArr = arr.filter((item) => {
+  let dup = arr1.find((ele) => ele.id === item.id);
+  console.log(dup);
+  if (!dup) {
+    arr1.push(item);
+    return true;
+  }
+  return false;
+});
+console.log(filArr);
+
+// const filteredArr = arr.reduce((acc, current) => {
+//   console.log(acc, current);
+//   const x = acc.find((item) => item.id === current.id);
+//   console.log('x', x);
+//   if (!x) {
+//     return acc.concat([current]);
+//   } else {
+//     return acc;
+//   }
+// }, []);
+// console.log(filteredArr);
