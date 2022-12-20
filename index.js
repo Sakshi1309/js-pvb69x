@@ -44,11 +44,17 @@ var employees = [
     dept: 'hr',
   },
 ];
-var departmentList = employees.filter(function (record, index) {
-  let dup = employees.find((i) => i.id === index);
-  console.log(dup);
 
-  return record;
+const uniqueIds = [];
+
+var departmentList = employees.filter((element) => {
+  const duplicates = uniqueIds.includes(element.id);
+  console.log(duplicates);
+  if (!duplicates) {
+    uniqueIds.push(element.id);
+    return true;
+  }
+  return false;
 });
 console.log(departmentList);
 
