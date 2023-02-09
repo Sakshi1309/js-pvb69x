@@ -13,8 +13,32 @@ console.log('Array two', array2);
 
 // Iteration in an array // of prints the value where as in prints the key
 for (let i of array2) {
-  console.log("Value " + i);
+  console.log('Value ' + i);
 }
 for (let i in array2) {
-  console.log("Index " + i);
+  console.log('Index ' + i);
 }
+
+// Import stylesheets
+let str = 'Riya, Priya, Tniya, Soumiya';
+let arr = str.split('');
+let newArr = arr.filter((item, index) => {
+  if (arr.indexOf(item) == index) {
+    return item;
+  }
+});
+console.log(newArr.join('')); //outPut "Riya, PrTnSoum"
+
+let array = [1, 2, 3, 4, 5, 5, 4, 3, 6, 7, 8];
+let duplicate = [];
+array.filter((item) => {
+  if (!duplicate.includes(item)) {
+    duplicate.push(item);
+  }
+});
+console.log(duplicate);
+
+array = array.filter((item, index) => {
+  if (array.indexOf(item) == index) return item;
+});
+console.log(array);
