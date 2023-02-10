@@ -42,3 +42,24 @@ array = array.filter((item, index) => {
   if (array.indexOf(item) == index) return item;
 });
 console.log(array);
+
+let output = sumOfNum(74231);
+function sumOfNum(arg) {
+  let sum = 0;
+  while (arg) {
+    sum += arg % 10;
+    arg = Math.floor(arg / 10);
+  }
+  return sum;
+}
+
+var value = 2568,
+  sum = value
+    .toString()
+    .split('')
+    .map(Number)
+    .reduce(function (a, b) {
+      return a + b;
+    }, 0);
+
+console.log(sum);
