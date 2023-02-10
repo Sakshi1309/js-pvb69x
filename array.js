@@ -58,7 +58,7 @@ var value = 2568,
     .toString()
     .split('')
     .map(Number)
-    .reduce(function (a, b) {
+    .reduce((a, b) => {
       return a + b;
     }, 0);
 
