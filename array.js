@@ -65,33 +65,6 @@ var value = 2568,
 console.log(sum);
 
 let str = 'India is my country';
-let newStr = str.split('').reverse().join('').split(' ').map(String).reverse();
-let arr = [];
-newStr = newStr.forEach((item) => {
-  item =
-    item.charAt(0).toUpperCase() +
-    item.substr(1, item.length - 2) +
-    item.charAt(item.length - 1).toLowerCase();
-  arr.push(item);
-});
-
-let str = 'India is my country';
-let newStr = str
-  .split('')
-  .reverse()
-  .join('')
-  .split(' ')
-  .reverse()
-  .map(
-    (item) =>
-      item.charAt(0).toUpperCase() +
-      item.substr(1, item.length - 2) +
-      item.charAt(item.length - 1).toLowerCase()
-  )
-  .join(' ');
-newStr;
-
-let str = 'India is my country';
 let newStr = str
   .split(' ')
   .map((item) => {
