@@ -18,8 +18,23 @@ let obj1 = {
 const newSet3 = new WeakSet([obj1]);
 
 const ws = new WeakSet();
-const foo = {};
-const bar = {};
+const foo = {
+  name: 'Sakshi',
+  address: {
+    city: 'Ranchi',
+  },
+};
+const bar = {
+  name: 'Kumari',
+  address: {
+    city: 'Bihar',
+  },
+};
+console.log(JSON.stringify(foo) === JSON.stringify(bar)); //false
+
+bar.name = 'Sakshi';
+bar.address.city = 'Ranchi';
+console.log(JSON.stringify(foo) === JSON.stringify(bar)); //True
 
 ws.add(foo);
 ws.add(bar);
