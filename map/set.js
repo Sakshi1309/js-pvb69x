@@ -25,16 +25,18 @@ const foo = {
   },
 };
 const bar = {
-  name: 'Kumari',
   address: {
     city: 'Bihar',
   },
+  name: 'Kumari',
 };
-console.log(JSON.stringify(foo) === JSON.stringify(bar)); //False
 
 bar.name = 'Sakshi';
 bar.address.city = 'Ranchi';
-console.log(JSON.stringify(foo) === JSON.stringify(bar)); //True
+
+//stringify will gives us true when both objects are in same order
+console.log(JSON.stringify(foo) === JSON.stringify(bar)); //False
+console.log(_.isEqual(foo, bar)); //True
 
 ws.add(foo);
 ws.add(bar);
