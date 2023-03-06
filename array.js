@@ -77,3 +77,25 @@ let newStr = str
   })
   .join(' ');
 newStr;
+
+//Shallow Copy
+let array1 = [3, 4, [5, 6], [7, 8, 9], [0, 1, 2, 89, 97]];
+let clonedArray1 = [...array1];
+clonedArray1[2][1] = 9;
+
+console.log(array1);
+// [3, 4, [5, 9], [7, 8, 9], [0, 1, 2, 89, 97]];
+
+console.log(clonedArray1);
+// [3, 4, [5, 9], [7, 8, 9], [0, 1, 2, 89, 97]];
+
+//Deep Copy
+let array1 = [3, 4, [5, 6], [7, 8, 9], [0, 1, 2, 89, 97]];
+let clonedArray1 = JSON.parse(JSON.stringify(array1));
+clonedArray1[2][1] = 9;
+
+console.log(array1);
+// [3, 4, [5, 6], [7, 8, 9], [0, 1, 2, 89, 97]];
+
+console.log(clonedArray1);
+// [3, 4, [5, 9], [7, 8, 9], [0, 1, 2, 89, 97]];
