@@ -30,7 +30,7 @@ const bar = {
     city: 'Bihar',
   },
 };
-console.log(JSON.stringify(foo) === JSON.stringify(bar)); //false
+console.log(JSON.stringify(foo) === JSON.stringify(bar)); //False
 
 bar.name = 'Sakshi';
 bar.address.city = 'Ranchi';
