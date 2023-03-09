@@ -104,3 +104,23 @@ console.log('obj1', obj1);
 //       "state": "Jharkhand"
 //   }
 // }
+
+const foo = {
+  name: 'Sakshi',
+  address: {
+    city: 'Ranchi',
+  },
+};
+const bar = {
+  address: {
+    city: 'Bihar',
+  },
+  name: 'Kumari',
+};
+
+bar.name = 'Sakshi';
+bar.address.city = 'Ranchi';
+
+//stringify will gives us true when both objects are in same order
+console.log(JSON.stringify(foo) === JSON.stringify(bar)); //False
+console.log(_.isEqual(foo, bar)); //True
