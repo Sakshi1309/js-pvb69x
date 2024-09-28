@@ -11,12 +11,47 @@ array1.forEach((item) => {
 console.log('Array one', array1);
 console.log('Array two', array2);
 
+// How the flat() method can be used to flatten an array in JavaScript?
+// Answer: The flat() method is a built-in method in JavaScript that can be used to flatten an array. It takes a depth parameter, which specifies how many levels of nested arrays should be flattened. If no depth parameter is provided, it defaults to 1. Here's an example usage:
+
+var nestedArray = [1, [2, [3, 4], 5], 6];
+nestedArray.flat(); // returs [1, 2, Array(2), 5, 6]
+nestedArray.flat(1); // returs [1, 2, Array(2), 5, 6]
+nestedArray.flat(2); // returns [1, 2, 3, 4, 5, 6]
+nestedArray.flat(Infinity); // returns [1, 2, 3, 4, 5, 6]
+
+let num1 = [10, 15, 38, 20, 13];
+let result = largestElement(2, 78);
+function largestElement(x, val) {
+  if (x === 1) {
+    num1.push(val);
+  } else if (x === 2) {
+    return num1.reduce(
+      (largest, current) => (current > largest ? current : largest),
+      num1[0]
+    );
+  }
+}
+
+let str = 'sHaubhama';
+let arr = str.toLowerCase().split('').sort();
+let count = 1;
+let freqency = {};
+for (let char of arr) {
+  if (!freqency[char]) {
+    freqency[char] = 1;
+  } else {
+    freqency[char]++;
+  }
+}
+const characters = Object.keys(freqency).sort();
+
 // Iteration in an array // of prints the value where as in prints the key
 for (let i of array2) {
-  console.log('Value ' + i);
+  console.log('Value ' + i); // prints value
 }
 for (let i in array2) {
-  console.log('Index ' + i);
+  console.log('Index ' + i); // Prints key
 }
 
 // Import stylesheets
