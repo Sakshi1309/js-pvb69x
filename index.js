@@ -1,4 +1,5 @@
 // Import stylesheets
+import './map/filter.js';
 import './style.css';
 
 // Write Javascript code!
