@@ -35,7 +35,6 @@ function largestElement(x, val) {
 
 let str = 'sHaubhama';
 let arr = str.toLowerCase().split('').sort();
-let count = 1;
 let freqency = {};
 for (let char of arr) {
   if (!freqency[char]) {

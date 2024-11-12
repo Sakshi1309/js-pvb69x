@@ -124,3 +124,8 @@ bar.address.city = 'Ranchi';
 //stringify will gives us true when both objects are in same order
 console.log(JSON.stringify(foo) === JSON.stringify(bar)); //False
 console.log(_.isEqual(foo, bar)); //True
+
+// When _.isEqual gives error in browser console. Please add these three lines
+// const script = document.createElement("script");
+// script.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js";
+// document.head.appendChild(script);
