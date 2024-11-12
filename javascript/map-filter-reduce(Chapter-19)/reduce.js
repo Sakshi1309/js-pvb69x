@@ -11,7 +11,7 @@ function sum(arr) {
 console.log(sum(arr));
 
 //Using reduce
-const output = arr.reduce(function (acc, curr) {
+const output = arr.reduce((acc, curr) => {
   acc += curr;
   return acc;
 }, 0);
