@@ -23,3 +23,5 @@ call() method allows an object to use the method (function) of another object.
 apply(): The apply method is similar to the call() method. The only difference is that, call() method takes arguments separately whereas, apply() method takes arguments as an array.
 
 bind(): This method returns a new function, where the value of “this” keyword will be bound to the owner object, which is provided as a parameter.
+
+Currying: Currying is an advanced technique to transform a function of arguments n, to n functions of one or fewer arguments.
