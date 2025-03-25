@@ -129,3 +129,22 @@ console.log(_.isEqual(foo, bar)); //True
 // const script = document.createElement("script");
 // script.src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js";
 // document.head.appendChild(script);
+
+let arr = [
+  { name: 'A', age: 34 },
+  { name: 'B', age: 35 },
+  { name: 'A', age: 67 },
+  { name: 'ABC', age: 34 },
+  { name: 'ABC', age: 344 },
+  { name: 'ABC', age: 36 },
+];
+// output :- {A: 2, B: 1, ABC: 3}
+const count = {};
+arr.forEach((item) => {
+  if (count[item.name]) {
+    count[item.name] += 1;
+  } else {
+    count[item.name] = 1;
+  }
+});
+console.log('count obj', count);
