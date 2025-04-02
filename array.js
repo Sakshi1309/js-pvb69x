@@ -133,3 +133,60 @@ console.log(array1);
 
 console.log(clonedArray1);
 // [3, 4, [5, 9], [7, 8, 9], [0, 1, 2, 89, 97]];
+
+let str = 'sakshi kumari';
+function capitalize(str) {
+  let result = str.map((item) => {
+    item = item.charAt(0).toUpperCase() + item.slice(1);
+    return item;
+  });
+  return result.join(' ');
+}
+let newStr = capitalize(str.split(' '));
+console.log(newStr);
+
+let str = 'sakshi kumari';
+let first = str.charAt(0).toUpperCase() + str.slice(1);
+
+var ourMusic = [
+  {
+    artist: 'Daft Punk',
+    title: 'Homework',
+    release_year: 1997,
+    formats: ['CD', 'Cassette', 'LP'],
+    gold: true,
+  },
+  {
+    artist: 'Daft Punk',
+    title: 'Homework',
+    release_year: 2000,
+    formats: ['CD', 'Cassette', 'LP'],
+    gold: false,
+  },
+  {
+    artist: 'Daft Punk',
+    title: 'Homework',
+    release_year: 1980,
+    formats: ['CD', 'Cassette', 'LP'],
+    gold: true,
+  },
+];
+// ['CD', 'Cassette', 'LP', 'CD', 'Cassette', 'LP', 'CD', 'Cassette', 'LP']
+
+let newArray = [];
+let newArray = [];
+ourMusic.forEach((item) => {
+  if (item.formats.length) {
+    item.formats.forEach((ele) => {
+      newArray.push(ele);
+    });
+  }
+});
+console.log(newArray);
+
+let filterArray = [];
+newArray.forEach((item) => {
+  if (!filterArray.includes(item)) {
+    filterArray.push(item);
+  }
+});
