@@ -1,3 +1,10 @@
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1);
+}
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 1);
+}
+
 function sayHi() {
   console.log(name);
   console.log(age);
@@ -68,6 +75,33 @@ arr.forEach((item) => {
   }
 });
 console.log('count obj', count);
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const evenNumber = filterEven((num) => num % 2 === 0, numbers);
+//output = [2,4,6,8]
+
+function filterEven(fn, arr) {
+  let result = [];
+  arr.forEach((item) => {
+    if (fn(item)) {
+      result.push(item);
+    }
+  });
+  return result;
+}
+console.log('Try programiz.pro', evenNumber);
+
+const addNumber = createBase(6);
+addNumber(10); // 16
+addNumber(15); // 21
+
+function createBase(num) {
+  var a = num;
+  return function (num2) {
+    return num + num2;
+  };
+}
+console.log('Try programiz.pro', addNumber(15));
 
 const input = 'Hello world this is test';
 //output: "olleh dlrow siht si tset";
