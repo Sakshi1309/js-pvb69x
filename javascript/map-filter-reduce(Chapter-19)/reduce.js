@@ -40,13 +40,13 @@ console.log(output3);
 
 const users = [
   { firstname: 'sakshi', lastname: 'kumari', age: 28 },
-  { firstname: 'shubham', lastname: 'kumar', age: 29 },
+  { firstname: 'shubham', lastname: 'kumar', age: 32 },
   { firstname: 'satyam', lastname: 'raj', age: 28 },
   { firstname: 'swati', lastname: 'kumari', age: 34 },
 ];
 
 //Find the {age: count, age:count, age:count}
-//{28:2, 29:1, 34:1}
+//{28:2, 32:1, 34:1}
 
 let userOutput = users.reduce(function (acc, curr) {
   if (acc[curr.age]) {
@@ -62,10 +62,7 @@ console.log(userOutput);
 //Find the [list of first name whose age is greater than 24]
 //[shubham, swati]
 
-let userOutput = users.reduce(function (acc, curr) {
-  if (acc[curr.age] > 28) {
-    return acc[curr.firstname];
-  }
+let userOutput = users.reduce((acc, curr) => {
+  acc[curr.age] = (acc[curr.age] || 0) + 1; // increment count
+  return acc;
 }, {});
-
-console.log(userOutput);

@@ -34,4 +34,8 @@ const ps = new Promise((resolve, reject) => {
   }
 });
 let arr = [1, 2, 3, 4];
-ps.then((res) => console.log(res)).catch((err) => console.log(err));
+ps.then((res) => {
+  console.log(res);
+}).catch((err) => {
+  console.log(err);
+});

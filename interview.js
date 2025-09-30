@@ -46,10 +46,13 @@ const multiDimArray = [1, [2, 3, [4, 5]], [6, [7, 8, [9, 10]], 11], 12];
 function flattenArray(arr) {
   let result = [];
   arr.forEach((item) => {
+    console.log(item, result);
     if (Array.isArray(item)) {
       result = result.concat(flattenArray(item));
+      console.log('2', item, result);
     } else {
       result.push(item);
+      console.log('3', item, result);
     }
   });
   return result;
