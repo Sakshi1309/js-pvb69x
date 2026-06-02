@@ -2,6 +2,10 @@
 // import './javascript/map-filter-reduce/map.js';
 // import './map/filter.js';
 import './style.css';
+// import './namasteDev/promises/promise.all().js';
+// import './namasteDev/promises/promise.allSettled().js';
+// import './namasteDev/promises/promise.race().js';
+import './namasteDev/promises/promise.any().js';
 
 // Write Javascript code!
 const appDiv = document.getElementById('app');
