@@ -31,54 +31,54 @@
 
 // -------------------------------------------------
 
-const fs = require('fs');
+// const fs = require('fs');
 
-console.log('1. sync start');
+// console.log('1. sync start');
 
-setTimeout(() => {
-  console.log('2. setTimeout');
-}, 0);
+// setTimeout(() => {
+//   console.log('2. setTimeout');
+// }, 0);
 
-setImmediate(() => {
-  console.log('3. setImmediate');
-});
+// setImmediate(() => {
+//   console.log('3. setImmediate');
+// });
 
-fs.readFile(__filename, () => {
-  console.log('4. fs.readFile');
+// fs.readFile(__filename, () => {
+//   console.log('4. fs.readFile');
 
-  setTimeout(() => console.log('5. inner setTimeout'), 0);
-  setImmediate(() => console.log('6. inner setImmediate'));
+//   setTimeout(() => console.log('5. inner setTimeout'), 0);
+//   setImmediate(() => console.log('6. inner setImmediate'));
 
-  Promise.resolve().then(() => console.log('7. promise inside fs'));
-});
+//   Promise.resolve().then(() => console.log('7. promise inside fs'));
+// });
 
-Promise.resolve().then(() => {
-  console.log('8. promise');
-});
+// Promise.resolve().then(() => {
+//   console.log('8. promise');
+// });
 
-process.nextTick(() => {
-  console.log('9. nextTick');
-});
+// process.nextTick(() => {
+//   console.log('9. nextTick');
+// });
 
-console.log('10. sync end');
+// console.log('10. sync end');
 
 // --------------------------------------
 
-// function secondLargest(arr) {
-//   let largest = 0;
-//   let secondLargest = 0;
-//   for (let num of arr) {
-//     if (num > largest) {
-//       secondLargest = largest;
-//       largest = num;
-//     } else if (num > secondLargest && num < largest) {
-//       secondLargest = num;
-//     }
-//   }
-//   return secondLargest;
-// }
+function secondLargest(arr) {
+  let largest = 0;
+  let secondLargest = 0;
+  for (let num of arr) {
+    if (num > largest) {
+      secondLargest = largest;
+      largest = num;
+    } else if (num > secondLargest && num < largest) {
+      secondLargest = num;
+    }
+  }
+  return secondLargest;
+}
 
-// console.log(secondLargest([10, 20, 4, 45, 99, 99]));
+console.log(secondLargest([10, 20, 4, 45, 99, 99]));
 
 // let arr = [10, 20, 4, 45, 99, 99];
 // let newArr = [...new Set(arr)];
