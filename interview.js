@@ -80,10 +80,10 @@ function secondLargest(arr) {
 
 console.log(secondLargest([10, 20, 4, 45, 99, 99]));
 
-// let arr = [10, 20, 4, 45, 99, 99];
-// let newArr = [...new Set(arr)];
-// newArr.sort((a, b) => b - a);
-// console.log(newArr[1]);
+let arr = [10, 20, 4, 45, 99, 99];
+let newArr = [...new Set(arr)];
+newArr.sort((a, b) => b - a);
+console.log(newArr[1]);
 
 // -------------------------------------------------
 
