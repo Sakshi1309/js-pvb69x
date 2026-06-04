@@ -1,12 +1,12 @@
 // -----------------------------------------------
 
-for (var i = 0; i < 3; i++) {
-  setTimeout(() => console.log(i), 1);
-}
+// for (var i = 0; i < 3; i++) {
+//   setTimeout(() => console.log(i), 1);
+// }
 
 // ------------------------------------------------
 
-// for (let i = 0; i < 3; i++) {
+// for (let i = 1; i <= 3; i++) {
 //   setTimeout(() => console.log(i), 1);
 // }
 
@@ -14,7 +14,7 @@ for (var i = 0; i < 3; i++) {
 
 // function sayHi() {
 //   console.log(name);
-//   // console.log(age);
+//   console.log(age);
 //   var name = 'xyz';
 //   let age = 24;
 // }
@@ -28,6 +28,39 @@ for (var i = 0; i < 3; i++) {
 // }, 0);
 // Promise.resolve().then(() => console.log('promise'));
 // console.log('end');
+
+// -------------------------------------------------
+
+const fs = require('fs');
+
+console.log('1. sync start');
+
+setTimeout(() => {
+  console.log('2. setTimeout');
+}, 0);
+
+setImmediate(() => {
+  console.log('3. setImmediate');
+});
+
+fs.readFile(__filename, () => {
+  console.log('4. fs.readFile');
+
+  setTimeout(() => console.log('5. inner setTimeout'), 0);
+  setImmediate(() => console.log('6. inner setImmediate'));
+
+  Promise.resolve().then(() => console.log('7. promise inside fs'));
+});
+
+Promise.resolve().then(() => {
+  console.log('8. promise');
+});
+
+process.nextTick(() => {
+  console.log('9. nextTick');
+});
+
+console.log('10. sync end');
 
 // --------------------------------------
 
